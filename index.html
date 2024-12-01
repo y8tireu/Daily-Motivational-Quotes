@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Quotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5), 
+                        0 0 10px 10px transparent;
+            animation: rainbowGlow 3s infinite;
+        }
+
+        @keyframes rainbowGlow {
+            0% { box-shadow: 0 0 10px 5px #ff0000; }
+            25% { box-shadow: 0 0 10px 5px #00ff00; }
+            50% { box-shadow: 0 0 10px 5px #0000ff; }
+            75% { box-shadow: 0 0 10px 5px #ff00ff; }
+            100% { box-shadow: 0 0 10px 5px #ff0000; }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        #quote-box {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-style: italic;
+        }
+
+        button {
+            background: black;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: rainbowGlow 3s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #github-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: black;
+            color: #fff;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: rainbowGlow 3s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        #github-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Motivational Quotes</h1>
+        <div id="quote-box">
+            <p id="quote">Click the button to get inspired</p>
+        </div>
+        <button id="new-quote-btn">Get a New Quote</button>
+    </div>
+    <button id="github-btn" onclick="window.open('https://github.com/y8tireu', '_blank')">GitHub Profile</button>
+    <script>
+        const quotes = [
+            "Believe in your potential; greatness awaits you.",
+            "Every small step forward is progress; keep moving.",
+            "Embrace challenges—they make you stronger.",
+            "Your mindset shapes your reality; think positively.",
+            "Dedicate yourself to continuous growth and learning.",
+            "Overcome fear by taking bold actions.",
+            "Setbacks are setups for remarkable comebacks.",
+            "You are the architect of your destiny.",
+            "Let your passion drive your purpose.",
+            "Focus on solutions, not problems.",
+            "Consistency turns average into excellence.",
+            "Dream big, start small, but most importantly, start.",
+            "Your journey is unique; don't compare it to others.",
+            "Rise above excuses and make things happen.",
+            "Invest in yourself; it's the best investment you can make.",
+            "Success starts with self-belief.",
+            "Hardships are opportunities in disguise.",
+            "Stay committed to your goals, no matter the challenge.",
+            "Visualize success and work towards it daily.",
+            "Your actions today build the foundation for tomorrow.",
+            "Don't fear failure; fear staying the same.",
+            "Harness your inner strength to conquer obstacles.",
+            "Stay focused on your path; distractions are detours.",
+            "Determination defines achievement.",
+            "Turn dreams into plans with deadlines.",
+            "Believe in the power of perseverance.",
+            "Great achievements require great sacrifices.",
+            "Stay humble, but let your ambition soar.",
+            "Your attitude can turn burdens into blessings.",
+            "Success is a series of small wins.",
+            "Face your fears; they are conquerable.",
+            "Let go of what's holding you back.",
+            "Your future depends on your decisions today.",
+            "Be proactive, not reactive.",
+            "Every expert was once a beginner; start now.",
+            "Embrace the process, not just the outcome.",
+            "Strength doesn't come from comfort zones.",
+            "Your resilience defines your character.",
+            "The only failure is quitting; keep trying.",
+            "Stay inspired and inspire others.",
+            "Opportunities multiply when seized.",
+            "Believe it's possible; that's half the journey.",
+            "Success is built on courage and action.",
+            "You are more powerful than you realize.",
+            "Let determination be the engine of success.",
+            "Transform 'can't' into 'can' and dreams into plans.",
+            "Embrace change; it's a gateway to growth.",
+            "Your passion is your greatest asset.",
+            "Success is a marathon, not a sprint.",
+            "Aim high and dare to fail.",
+            "Stay patient and trust your journey."
+        ];
+
+        const quoteElement = document.getElementById("quote");
+        const newQuoteButton = document.getElementById("new-quote-btn");
+
+        newQuoteButton.addEventListener("click", () => {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteElement.textContent = quotes[randomIndex];
+        });
+    </script>
+</body>
+</html>
+
